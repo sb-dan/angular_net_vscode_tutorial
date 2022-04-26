@@ -1,0 +1,22 @@
+<header>
+  <nav>
+    <mat-toolbar color="primary">
+      <div class="header-brand">
+        <span>SBTutorial</span>
+      </div>
+      <div class="flex-spacer"></div>
+      <div class="nav-wrapper">
+        <a class="nav-item" [routerLink]="['/']" [routerLinkActive]="['link-active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </a>
+        <a class="nav-item" [routerLink]="['/counter']" [routerLinkActive]="['link-active']">
+          Counter
+        </a>
+        <a class="nav-item" [routerLink]="['/fetch-data']" [routerLinkActive]="['link-active']">
+          Fetch-Data
+        </a>
+      </div>
+    </mat-toolbar>
+  </nav>
+</header>
