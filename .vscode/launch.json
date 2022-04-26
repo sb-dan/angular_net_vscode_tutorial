@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Full-Debugger",
+      "configurations": [".NET Core Launch (web)", "Browser Debugger"],
+      "stopAll": true
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Browser Debugger",
+      "request": "launch",
+      "type": "msedge",
+      "url": "https://localhost:7294",
+      "webRoot": "${workspaceFolder}/Website/ClientApp"
+    },
+    {
+      // Use IntelliSense to find out which attributes exist for C# debugging
+      // Use hover for the description of the existing attributes
+      // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      // If you have changed target frameworks, make sure to update the program path.
+      "program": "${workspaceFolder}/Website/bin/Debug/net6.0/Website.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Website",
+      "stopAtEntry": false,
+      //   // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+      //   "serverReadyAction": {
+      //     "action": "openExternally",
+      //     "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      //   },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "logging": {
+        "moduleLoad": false
+      }
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach"
+    }
+  ]
+}

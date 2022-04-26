@@ -1,0 +1,19 @@
+.header-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+.nav-wrapper {
+  display: flex;
+  font-size: 16px;
+  gap: 10px;
+
+  .nav-item {
+    color: #fff;
+  }
+
+  .link-active {
+    text-decoration: none;
+  }
+}
