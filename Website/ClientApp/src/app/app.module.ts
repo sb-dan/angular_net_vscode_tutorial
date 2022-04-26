@@ -11,6 +11,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { StandardLayoutComponent } from './layouts/standard-layout/standard-layout.component';
+import { MinimalLayoutComponent } from './layouts/minimal-layout/minimal-layout.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
+    StandardLayoutComponent,
+    MinimalLayoutComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,9 +31,20 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      {
+        path: '',
+        component: StandardLayoutComponent,
+        children: [
+          { path: 'home', component: HomeComponent, pathMatch: 'full' },
+          { path: 'fetch-data', component: FetchDataComponent },
+        ],
+      },
+      {
+        path: '',
+        component: MinimalLayoutComponent,
+        children: [{ path: 'counter', component: CounterComponent }],
+      },
     ]),
     BrowserAnimationsModule,
   ],
