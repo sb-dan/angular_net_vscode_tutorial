@@ -12,7 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
     CommonModule,
     RouterModule.forChild([
       {
-        path: 'user',
+        path: '',
         component: StandardLayoutComponent,
         children: [
           { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -20,7 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
         ],
       },
       {
-        path: 'user',
+        path: '',
         component: MinimalLayoutComponent,
         children: [{ path: 'signon', component: SignOnComponent }],
       },

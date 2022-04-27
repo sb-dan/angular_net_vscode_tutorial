@@ -49,7 +49,7 @@ import { MinimalLayoutComponent } from '@layouts/minimal-layout/minimal-layout.c
           children: [{ path: 'counter', component: CounterComponent }],
         },
         {
-          path: '',
+          path: 'user',
           data: { preload: false, preloadDelay: 5000 },
           loadChildren: () =>
             import('@modules/user/user.module').then((m) => m.UserModule),
